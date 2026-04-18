@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estrategia Comercial · Cartagena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,600;12..96,800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.383.0/umd/lucide.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080B12;--bg1:#0D1017;--bg2:#12161F;--bg3:#181D28;--card:#111520;
+  --border:rgba(255,255,255,.07);--border2:rgba(255,255,255,.12);
+  --text:#E8EAF0;--muted:#6B7588;--muted2:#8B95A8;
+  --accent:#F2C840;--accent2:#FF6535;--blue:#4A9EFF;--green:#3DCA7A;
+  --green2:rgba(61,202,122,.08);--red:rgba(255,101,53,.1);--yellow2:rgba(242,200,64,.08);
+  --serif:'Bricolage Grotesque',sans-serif;--sans:'DM Sans',sans-serif;
+  --r:14px;--r2:20px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.32s}.reveal.d4{transition-delay:.44s}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(8,11,18,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:15px;font-weight:800;color:var(--text);letter-spacing:-.02em;text-decoration:none}
+.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{display:block;padding:6px 13px;font-size:13px;color:var(--muted);text-decoration:none;border-radius:50px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--text);background:var(--bg3)}
+.nav-pill{display:flex;align-items:center;gap:6px;padding:7px 18px;background:var(--accent);color:#000;font-size:13px;font-weight:600;border-radius:50px;text-decoration:none;transition:opacity .2s}
+.nav-pill:hover{opacity:.88}
+.nav-pill svg{width:13px;height:13px}
+/* HERO */
+.hero{min-height:100vh;padding:140px 5vw 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-80px;top:-80px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(242,200,64,.15) 0%,transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;left:-100px;bottom:-120px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(74,158,255,.08) 0%,transparent 65%);pointer-events:none}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(242,200,64,.2);background:rgba(242,200,64,.06);padding:6px 16px;border-radius:50px;margin-bottom:28px}
+.hero-tag svg{width:12px;height:12px}
+.hero h1{font-family:var(--serif);font-size:clamp(42px,5.5vw,74px);font-weight:800;line-height:1.02;letter-spacing:-.04em;margin-bottom:28px;color:#fff}
+.hero h1 .ac{color:var(--accent)}.hero h1 .ac2{color:var(--accent2)}
+.hero-sub{font-size:17px;color:var(--muted2);line-height:1.75;max-width:480px;margin-bottom:44px;font-weight:300}
+.hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#000;font-size:14px;font-weight:600;padding:13px 26px;border-radius:50px;text-decoration:none;transition:transform .2s,opacity .2s}
+.btn-p svg{width:15px;height:15px}
+.btn-p:hover{transform:translateY(-2px);opacity:.9}
+.btn-g{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:400;color:var(--muted2);text-decoration:none;padding:13px 0;transition:color .2s}
+.btn-g svg{width:14px;height:14px}
+.btn-g:hover{color:var(--text)}
+/* HERO RIGHT */
+.hcards{display:flex;flex-direction:column;gap:12px}
+.hcard{background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:28px}
+.hcard-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px}
+.hcard-lbl{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:500}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:50px}
+.chip svg{width:11px;height:11px}
+.chip-d{background:rgba(255,101,53,.12);color:var(--accent2)}
+.chip-u{background:rgba(61,202,122,.12);color:var(--green)}
+.hcard-num{font-family:var(--serif);font-size:54px;font-weight:800;line-height:1;color:#fff;letter-spacing:-.04em;margin-bottom:6px}
+.hcard-desc{font-size:13px;color:var(--muted);line-height:1.5}
+.mcards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px}
+.mcard-val{font-family:var(--serif);font-size:28px;font-weight:800;color:var(--accent);letter-spacing:-.03em;margin-bottom:3px}
+.mcard-lbl{font-size:12px;color:var(--muted);line-height:1.4}
+/* TICKER */
+.ticker{background:var(--accent);padding:12px 0;overflow:hidden;white-space:nowrap;position:relative;z-index:1}
+.ticker-inner{display:inline-flex;animation:tick 32s linear infinite}
+.t-item{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;color:#000;padding:0 32px;letter-spacing:.04em;text-transform:uppercase}
+.t-item svg{width:12px;height:12px;opacity:.6}
+.t-sep{opacity:.35}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* SECTION BASE */
+section{padding:96px 5vw}
+.smeta{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.snum{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.sline{flex:1;max-width:40px;height:1px;background:var(--border2)}
+.stag{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.stitle{font-family:var(--serif);font-size:clamp(30px,4vw,50px);font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-bottom:16px;color:#fff}
+.ssub{font-size:16px;color:var(--muted2);max-width:580px;margin-bottom:60px;line-height:1.7;font-weight:300}
+/* DIAG */
+.diag-section{background:var(--bg1)}
+.diag-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.dcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:32px;position:relative;overflow:hidden;transition:border-color .25s,transform .25s}
+.dcard:hover{border-color:var(--border2);transform:translateY(-3px)}
+.dcard::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,101,53,.5),transparent)}
+.dico{width:42px;height:42px;border-radius:10px;background:rgba(255,101,53,.1);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--accent2)}
+.dico svg{width:18px;height:18px}
+.dcard h3{font-family:var(--serif);font-size:18px;font-weight:700;color:#fff;margin-bottom:10px;letter-spacing:-.02em}
+.dcard p{font-size:14px;color:var(--muted2);line-height:1.65}
+.dstat{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;font-weight:500;color:var(--accent2);background:rgba(255,101,53,.07);border:1px solid rgba(255,101,53,.14);padding:5px 12px;border-radius:50px}
+.dstat svg{width:12px;height:12px}
+/* COLOMBIA */
+.col-section{background:var(--bg)}
+.col-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+.sstack{border-radius:var(--r2);overflow:hidden;border:1px solid var(--border)}
+.srow{background:var(--card);padding:22px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);transition:background .2s}
+.srow:last-child{border-bottom:none}
+.srow:hover{background:var(--bg3)}
+.srow-l{display:flex;align-items:center;gap:14px}
+.sico{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sico svg{width:16px;height:16px}
+.si-wa{background:rgba(37,211,102,.1);color:#25D366}
+.si-fb{background:rgba(66,103,178,.12);color:#6B9BFF}
+.si-ig{background:rgba(225,48,108,.1);color:#E1306C}
+.si-bad{background:rgba(255,101,53,.1);color:var(--accent2)}
+.sch{font-size:14px;font-weight:500;color:#fff;margin-bottom:2px}
+.sdet{font-size:12px;color:var(--muted)}
+.spct{font-family:var(--serif);font-size:26px;font-weight:800;letter-spacing:-.03em;text-align:right}
+.spct-lbl{font-size:11px;color:var(--muted);text-align:right;margin-top:1px}
+.ibox{background:var(--yellow2);border:1px solid rgba(242,200,64,.12);border-radius:var(--r);padding:20px 24px;margin-top:14px;display:flex;gap:12px;align-items:flex-start}
+.ibox svg{width:16px;height:16px;flex-shrink:0;margin-top:2px;color:var(--accent)}
+.ibox p{font-size:13px;color:var(--muted2);line-height:1.6}
+.ibox p strong{color:var(--accent);font-weight:500}
+.ibox-b{background:rgba(74,158,255,.05);border-color:rgba(74,158,255,.12)}
+.ibox-b svg{color:var(--blue)}
+/* ANATOMIA */
+.anat-section{background:var(--bg1)}
+.anat-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.anat-sticky{position:sticky;top:80px}
+.fframe{background:var(--card);border:1px solid var(--border2);border-radius:20px;overflow:hidden}
+.fhead{background:var(--accent2);padding:22px 24px}
+.fhead-tag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:6px}
+.fhead-title{font-family:var(--serif);font-size:28px;font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.03em}
+.fimg{height:170px;background:linear-gradient(135deg,#1a1f2e 0%,#232840 100%);display:flex;align-items:center;justify-content:center;position:relative}
+.fimg svg{width:48px;height:48px;color:rgba(255,255,255,.1)}
+.fbadge{position:absolute;top:12px;right:12px;background:#000;color:var(--accent);font-size:9px;font-weight:700;text-align:center;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;border:1.5px solid rgba(242,200,64,.3)}
+.fbody{padding:22px 24px}
+.fsave{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;background:rgba(61,202,122,.1);color:var(--green);border:1px solid rgba(61,202,122,.2);padding:4px 12px;border-radius:50px;margin-bottom:12px}
+.fsave svg{width:11px;height:11px}
+.fprices{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+.fold{font-size:14px;color:var(--muted);text-decoration:line-through}
+.fnew{font-family:var(--serif);font-size:32px;font-weight:800;color:var(--accent);letter-spacing:-.03em}
+.fname{font-size:13px;color:var(--muted2);margin-bottom:8px}
+.fstock{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--accent2);margin-bottom:16px}
+.fstock svg{width:12px;height:12px}
+.fcta{display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;font-size:13px;font-weight:600;padding:13px;border-radius:10px;text-decoration:none}
+.fcta svg{width:15px;height:15px}
+.ffoot{padding:14px 24px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.ffoot-l{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.ffoot-l svg{width:12px;height:12px}
+.ffoot-r{font-size:11px;color:var(--muted)}
+.elist{display:flex;flex-direction:column;gap:4px}
+.eitem{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;display:flex;gap:16px;transition:border-color .2s,transform .2s;cursor:default}
+.eitem:hover{border-color:var(--border2);transform:translateX(4px)}
+.enum{width:30px;height:30px;border-radius:8px;background:rgba(242,200,64,.08);border:1px solid rgba(242,200,64,.15);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:13px;font-weight:800;color:var(--accent);flex-shrink:0}
+.ebody h4{font-size:14px;font-weight:600;color:#fff;margin-bottom:6px}
+.ebody p{font-size:13px;color:var(--muted2);line-height:1.55}
+.edata{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:11px;font-weight:500;color:var(--blue);background:rgba(74,158,255,.06);border:1px solid rgba(74,158,255,.1);padding:4px 10px;border-radius:50px}
+.edata svg{width:11px;height:11px}
+/* PSICO */
+.psico-section{background:var(--bg)}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.pcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:30px;display:flex;flex-direction:column;gap:16px;transition:transform .25s,border-color .25s}
+.pcard:hover{transform:translateY(-4px);border-color:var(--border2)}
+.pico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.pico svg{width:20px;height:20px}
+.pi-a{background:rgba(242,200,64,.08);color:var(--accent)}
+.pi-b{background:rgba(74,158,255,.08);color:var(--blue)}
+.pi-c{background:rgba(61,202,122,.08);color:var(--green)}
+.pi-d{background:rgba(255,101,53,.08);color:var(--accent2)}
+.pcard h3{font-family:var(--serif);font-size:18px;font-weight:700;color:#fff;letter-spacing:-.02em}
+.pref{font-size:11px;font-weight:400;color:var(--muted);font-style:italic}
+.pcard p{font-size:14px;color:var(--muted2);line-height:1.65}
+.pstat-num{font-family:var(--serif);font-size:34px;font-weight:800;color:var(--accent);letter-spacing:-.03em}
+.pstat-lbl{font-size:12px;color:var(--muted);margin-top:2px}
+/* CANALES */
+.canal-section{background:var(--bg1)}
+.cgrid{display:flex;flex-direction:column;gap:12px}
+.crow{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:28px 32px;display:grid;grid-template-columns:280px 1fr 1fr 1fr auto;gap:24px;align-items:center;transition:border-color .2s,transform .2s;position:relative}
+.crow:hover{border-color:var(--border2);transform:translateX(4px)}
+.crow.hl{border-color:rgba(242,200,64,.22);background:rgba(242,200,64,.02)}
+.crow.hl::after{content:'Prioridad 1';position:absolute;right:20px;top:-10px;font-size:10px;font-weight:600;background:var(--accent);color:#000;padding:3px 10px;border-radius:50px;letter-spacing:.04em;text-transform:uppercase}
+.cid{display:flex;align-items:center;gap:14px}
+.cico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cico svg{width:20px;height:20px}
+.c-wa{background:rgba(37,211,102,.1);color:#25D366}
+.c-fb{background:rgba(66,103,178,.1);color:#6B9BFF}
+.c-ig{background:rgba(225,48,108,.1);color:#E1306C}
+.cname{font-size:15px;font-weight:600;color:#fff;margin-bottom:3px}
+.csub{font-size:12px;color:var(--muted)}
+.cmet{text-align:center}
+.cmet-val{font-family:var(--serif);font-size:22px;font-weight:800;letter-spacing:-.03em}
+.cmet-lbl{font-size:11px;color:var(--muted);margin-top:2px}
+.cbar-w{display:flex;align-items:center;gap:10px}
+.cbar{height:6px;background:var(--bg3);border-radius:3px;flex:1;overflow:hidden}
+.cbar-f{height:100%;border-radius:3px;transition:width 1s ease}
+.ctag{font-size:11px;font-weight:600;color:var(--muted);background:var(--bg3);border-radius:50px;padding:5px 14px;white-space:nowrap}
+.ctag.on{background:rgba(242,200,64,.08);color:var(--accent);border:1px solid rgba(242,200,64,.15)}
+/* PLAN */
+.plan-section{background:var(--bg)}
+.pgrid2{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.daycard{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:24px 20px;display:flex;flex-direction:column;gap:14px;transition:border-color .25s,transform .25s;min-height:270px}
+.daycard:hover{border-color:var(--border2);transform:translateY(-4px)}
+.day-lbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.day-L{font-family:var(--serif);font-size:54px;font-weight:800;line-height:1;color:#fff;letter-spacing:-.04em;margin:4px 0}
+.day-div{height:1px;background:var(--border)}
+.day-ico{width:30px;height:30px;border-radius:8px;background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.day-ico svg{width:14px;height:14px}
+.day-act{font-size:13px;font-weight:600;color:#fff;line-height:1.4}
+.day-det{font-size:12px;color:var(--muted);line-height:1.5}
+.day-kpi{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;color:var(--green);background:var(--green2);border-radius:50px;padding:4px 10px;margin-top:auto}
+.day-kpi svg{width:10px;height:10px}
+/* KPIs */
+.kpi-section{background:var(--bg1)}
+.kgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:28px;transition:border-color .25s,transform .25s}
+.kcard:hover{border-color:var(--border2);transform:translateY(-3px)}
+.kico{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.kico svg{width:17px;height:17px}
+.ki-a{background:rgba(242,200,64,.08);color:var(--accent)}
+.ki-b{background:rgba(74,158,255,.08);color:var(--blue)}
+.ki-c{background:rgba(61,202,122,.08);color:var(--green)}
+.ki-d{background:rgba(255,101,53,.08);color:var(--accent2)}
+.k-lbl{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;margin-bottom:8px}
+.k-target{font-family:var(--serif);font-size:38px;font-weight:800;color:#fff;letter-spacing:-.04em;line-height:1;margin-bottom:6px}
+.k-desc{font-size:13px;color:var(--muted2);line-height:1.55}
+.k-time{display:flex;align-items:center;gap:6px;margin-top:14px;font-size:11px;color:var(--muted)}
+.k-time svg{width:12px;height:12px}
+/* FOOTER */
+footer{background:var(--bg1);border-top:1px solid var(--border);padding:40px 5vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.foot-brand{font-family:var(--serif);font-size:15px;font-weight:800;color:var(--text);letter-spacing:-.02em}
+.foot-note{font-size:13px;color:var(--muted)}
+.foot-links{display:flex;gap:20px}
+.foot-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--accent)}
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .crow{grid-template-columns:1fr 1fr;gap:16px}
+  .crow.hl::after{display:none}
+  .ctag{grid-column:1/-1;width:fit-content}
+}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding-top:110px}
+  .hcards{display:none}
+  .diag-grid{grid-template-columns:1fr}
+  .col-layout{grid-template-columns:1fr}
+  .anat-layout{grid-template-columns:1fr}
+  .anat-sticky{position:static;display:none}
+  .pgrid{grid-template-columns:1fr 1fr}
+  .pgrid2{grid-template-columns:1fr 1fr}
+  .kgrid{grid-template-columns:1fr 1fr}
+  nav .nav-links{display:none}
+  footer{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:560px){
+  .pgrid{grid-template-columns:1fr}
+  .kgrid{grid-template-columns:1fr}
+  .pgrid2{grid-template-columns:1fr}
+  .mcards{grid-template-columns:1fr 1fr}
+  .crow{display:flex;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand"><div class="nav-dot"></div>Estrategia Comercial · Cartagena</a>
+  <ul class="nav-links">
+    <li><a href="#diagnostico">Diagnóstico</a></li>
+    <li><a href="#colombia">Mercado</a></li>
+    <li><a href="#anatomia">Diseño</a></li>
+    <li><a href="#psicologia">Psicología</a></li>
+    <li><a href="#canales">Canales</a></li>
+    <li><a href="#plan">Plan</a></li>
+    <li><a href="#kpis">KPIs</a></li>
+  </ul>
+  <a href="#plan" class="nav-pill"><i data-lucide="arrow-down"></i> Ver el plan</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-tag reveal"><i data-lucide="bar-chart-2"></i> Análisis comercial · Cartagena 2025</div>
+    <h1 class="reveal d1">Diagnóstico real.<br><span class="ac">Estrategia</span><br><span class="ac2">con datos.</span></h1>
+    <p class="hero-sub reveal d2">En Colombia el 92% de vendedores informales comete los mismos tres errores de conversión. Esta guía los identifica, explica por qué ocurren y traza el camino correcto respaldado en comportamiento del consumidor digital.</p>
+    <div class="hero-actions reveal d3">
+      <a href="#diagnostico" class="btn-p"><i data-lucide="search"></i> Ver diagnóstico completo</a>
+      <a href="#plan" class="btn-g"><i data-lucide="calendar"></i> Ir al plan semanal</a>
+    </div>
+  </div>
+  <div class="hcards reveal d2">
+    <div class="hcard">
+      <div class="hcard-top">
+        <div class="hcard-lbl">Alcance orgánico · imagen estática · Instagram Colombia</div>
+        <div class="chip chip-d"><i data-lucide="trending-down"></i> Crítico</div>
+      </div>
+      <div class="hcard-num">2–5%</div>
+      <div class="hcard-desc">De tu base de seguidores ve cada publicación. Con 300 seguidores, tu flyer llega a menos de 15 personas reales.</div>
+    </div>
+    <div class="mcards">
+      <div class="mcard"><div class="mcard-val">94%</div><div class="mcard-lbl">Penetración WhatsApp en Colombia</div></div>
+      <div class="mcard"><div class="mcard-val">+63%</div><div class="mcard-lbl">Conversión con precio anclado vs. sin ancla</div></div>
+      <div class="mcard"><div class="mcard-val">37M</div><div class="mcard-lbl">Usuarios activos de Facebook en Colombia</div></div>
+      <div class="mcard"><div class="mcard-val">−28%</div><div class="mcard-lbl">Intención de compra perdida por CTA ausente</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="t-item"><i data-lucide="zap"></i> WhatsApp grupos · tasa de apertura 70%+ <span class="t-sep">·</span></span>
+    <span class="t-item"><i data-lucide="zap"></i> Precio anclado · +63% conversión (Kahneman, MIT Sloan) <span class="t-sep">·</span></span>
+    <span class="t-item"><i data-lucide="zap"></i> Banner blindness · 85% de anuncios repetidos pierden efectividad en 3 exposiciones <span class="t-sep">·</span></span>
+    <span class="t-item"><i data-lucide="zap"></i> Escasez cuantificada · reduce tiempo de decisión 47% <span class="t-sep">·</span></span>
+    <span class="t-item"><i data-lucide="zap"></i> Colombia · 94% de la población usa WhatsApp activamente <span class="t-sep">·</span></span>
+    <span class="t-item"><i data-lucide="zap"></i> CTA ausente · elimina hasta 28% de la intención de compra <span class="t-sep">·</span></span>
+    <span class="t-item"><i data-lucide="zap"></i> WhatsApp grupos · tasa de apertura 70%+ <span class="t-sep">·</span></span>
+    <span class="t-item"><i data-lucide="zap"></i> Precio anclado · +63% conversión (Kahneman, MIT Sloan) <span class="t-sep">·</span></span>
+    <span class="t-item"><i data-lucide="zap"></i> Banner blindness · 85% de anuncios repetidos pierden efectividad en 3 exposiciones <span class="t-sep">·</span></span>
+    <span class="t-item"><i data-lucide="zap"></i> Escasez cuantificada · reduce tiempo de decisión 47% <span class="t-sep">·</span></span>
+    <span class="t-item"><i data-lucide="zap"></i> Colombia · 94% de la población usa WhatsApp activamente <span class="t-sep">·</span></span>
+    <span class="t-item"><i data-lucide="zap"></i> CTA ausente · elimina hasta 28% de la intención de compra <span class="t-sep">·</span></span>
+  </div>
+</div>
+
+<!-- DIAGNÓSTICO -->
+<section id="diagnostico" class="diag-section">
+  <div class="smeta"><div class="snum">01</div><div class="sline"></div><div class="stag">Diagnóstico</div></div>
+  <h2 class="stitle reveal">Cuatro frenos de conversión<br>identificados en tus publicaciones</h2>
+  <p class="ssub reveal d1">Cada barrera tiene sustento en comportamiento del consumidor digital. Identificarlas no es suficiente — hay que entender por qué ocurren para resolverlas con precisión.</p>
+  <div class="diag-grid">
+    <div class="dcard reveal">
+      <div class="dico"><i data-lucide="eye-off"></i></div>
+      <h3>Ceguera de banner por repetición visual</h3>
+      <p>El cerebro humano filtra estímulos repetitivos de forma automática — fenómeno conocido como <em>banner blindness</em>. Con 14+ publicaciones de estructura idéntica, el feed entrena al seguidor para ignorarlas antes de procesar el contenido. El algoritmo de Meta también penaliza la falta de diversidad visual con menor distribución orgánica.</p>
+      <div class="dstat"><i data-lucide="trending-down"></i> El 85% de los anuncios repetidos pierden efectividad en 3 exposiciones (Nielsen)</div>
+    </div>
+    <div class="dcard reveal d1">
+      <div class="dico"><i data-lucide="mouse-pointer-click"></i></div>
+      <h3>Fricción de conversión: CTA inexistente</h3>
+      <p>La intención de compra es momentánea. Cuando un cliente potencial no encuentra de forma inmediata cómo actuar — número de WhatsApp visible, instrucción clara — ese impulso se disipa en segundos. Cada paso adicional que el comprador debe deducir por cuenta propia reduce la conversión en promedio un 20%. Sin CTA, el flyer es solo decoración.</p>
+      <div class="dstat"><i data-lucide="trending-down"></i> Sin CTA visible la tasa de contacto cae hasta 28% (HubSpot, 2024)</div>
+    </div>
+    <div class="dcard reveal d2">
+      <div class="dico"><i data-lucide="tag"></i></div>
+      <h3>Precio sin ancla de referencia cognitiva</h3>
+      <p>El precio aislado no comunica valor — comunica solo un número. La percepción de "oferta" requiere un punto de comparación para activarse. Sin el precio original como ancla, el comprador no puede evaluar si $140.000 es caro o barato. La economía conductual demuestra que la ausencia de ancla es uno de los mayores inhibidores de compra en e-commerce informal.</p>
+      <div class="dstat"><i data-lucide="trending-up"></i> Precio anclado incrementa conversión hasta 63% (Kahneman 1979 / MIT Sloan)</div>
+    </div>
+    <div class="dcard reveal d3">
+      <div class="dico"><i data-lucide="signal-low"></i></div>
+      <h3>Canal de distribución con alcance residual</h3>
+      <p>El perfil personal de Instagram tiene un alcance orgánico de 2–5% de seguidores para publicaciones estáticas. Para artículos del hogar en Cartagena, eso equivale a prácticamente ninguna exposición real. Los canales de mayor ROI — grupos de WhatsApp y Facebook Marketplace — no están siendo usados, y concentran la audiencia de compra inmediata en Colombia.</p>
+      <div class="dstat"><i data-lucide="arrow-right"></i> Marketplace Colombia: +12M búsquedas/mes en la categoría hogar</div>
+    </div>
+  </div>
+</section>
+
+<!-- COLOMBIA -->
+<section id="colombia" class="col-section">
+  <div class="smeta"><div class="snum">02</div><div class="sline"></div><div class="stag">Datos de mercado · Colombia</div></div>
+  <div class="col-layout">
+    <div>
+      <h2 class="stitle reveal">Dónde está<br>la audiencia real<br>en Cartagena</h2>
+      <p class="ssub reveal d1" style="margin-bottom:28px">El comportamiento digital del consumidor colombiano tiene patrones documentados. La estrategia debe seguir los datos, no los supuestos sobre qué red social "está de moda".</p>
+      <div class="ibox reveal d2">
+        <i data-lucide="lightbulb"></i>
+        <p>WhatsApp en Colombia no es solo mensajería — es el <strong>canal comercial de confianza</strong> para transacciones entre particulares. Los grupos de vecindario y conjuntos tienen tasas de apertura superiores al 70%, frente al 21% promedio del email marketing y el 5% de Instagram orgánico.</p>
+      </div>
+      <div class="ibox ibox-b reveal d3" style="margin-top:10px">
+        <i data-lucide="map-pin"></i>
+        <p>Facebook Marketplace en Cartagena concentra la búsqueda de artículos del hogar de segunda mano y <strong>outlet</strong>. El usuario llega con intención de compra activa — no navega pasivamente como en Instagram. Publicar aquí significa llegar a alguien que ya está buscando lo que tú vendes.</p>
+      </div>
+    </div>
+    <div class="reveal d1">
+      <div class="sstack">
+        <div class="srow">
+          <div class="srow-l">
+            <div class="sico si-wa"><i data-lucide="message-circle"></i></div>
+            <div><div class="sch">WhatsApp · Grupos locales</div><div class="sdet">Compras hogar, tasa de apertura real</div></div>
+          </div>
+          <div><div class="spct" style="color:var(--green)">70%+</div><div class="spct-lbl">Apertura de mensajes</div></div>
+        </div>
+        <div class="srow">
+          <div class="srow-l">
+            <div class="sico si-fb"><i data-lucide="globe"></i></div>
+            <div><div class="sch">Facebook Marketplace · Cartagena</div><div class="sdet">Intención de compra activa, usuario local</div></div>
+          </div>
+          <div><div class="spct" style="color:var(--blue)">37M</div><div class="spct-lbl">Usuarios activos Colombia</div></div>
+        </div>
+        <div class="srow">
+          <div class="srow-l">
+            <div class="sico si-ig"><i data-lucide="play-circle"></i></div>
+            <div><div class="sch">Instagram · Reels (video corto)</div><div class="sdet">Alcance ampliado vs. imagen estática</div></div>
+          </div>
+          <div><div class="spct" style="color:var(--accent)">3×</div><div class="spct-lbl">Mayor alcance que foto</div></div>
+        </div>
+        <div class="srow">
+          <div class="srow-l">
+            <div class="sico si-bad"><i data-lucide="image"></i></div>
+            <div><div class="sch">Instagram · Imagen estática</div><div class="sdet">Canal actual sin pago publicitario</div></div>
+          </div>
+          <div><div class="spct" style="color:var(--accent2)">2–5%</div><div class="spct-lbl">Alcance orgánico real</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANATOMÍA -->
+<section id="anatomia" class="anat-section">
+  <div class="smeta"><div class="snum">03</div><div class="sline"></div><div class="stag">Diseño que convierte</div></div>
+  <h2 class="stitle reveal">Anatomía de un flyer<br>que genera acción</h2>
+  <p class="ssub reveal d1">Cada elemento tiene una función psicológica específica. No es estética — es arquitectura de decisión del comprador.</p>
+  <div class="anat-layout">
+    <div class="anat-sticky reveal">
+      <div class="fframe">
+        <div class="fhead"><div class="fhead-tag">¡Lo quiero!</div><div class="fhead-title">Lo Tengo!</div></div>
+        <div class="fimg"><i data-lucide="package"></i><div class="fbadge">Entrega Inmediata</div></div>
+        <div class="fbody">
+          <div class="fsave"><i data-lucide="check"></i> Ahorras $70.000</div>
+          <div class="fprices"><span class="fold">$200.000</span><span class="fnew">$130.000</span></div>
+          <div class="fname">Set BBQ 6 Piezas + Estuche · Belia Home</div>
+          <div class="fstock"><i data-lucide="alert-circle"></i> Solo 2 unidades disponibles</div>
+          <a href="https://wa.me/573000000000" target="_blank" rel="noopener" class="fcta"><i data-lucide="message-circle"></i> Pedir por WhatsApp · 300 000 0000</a>
+        </div>
+        <div class="ffoot"><div class="ffoot-l"><i data-lucide="map-pin"></i> Cartagena</div><div class="ffoot-r">Outlet Premios</div></div>
+      </div>
+    </div>
+    <div class="elist">
+      <div class="eitem reveal">
+        <div class="enum">1</div>
+        <div class="ebody">
+          <h4>Precio original tachado — ancla cognitiva</h4>
+          <p>Mostrar el precio original activa el mecanismo de contraste cognitivo (Kahneman). El cerebro evalúa el precio actual en relación al de referencia, no en términos absolutos. Sin ancla, $130.000 es solo un número. Con $200.000 tachado, se convierte en un ahorro percibido de $70.000 — y eso sí mueve a la acción.</p>
+          <div class="edata"><i data-lucide="trending-up"></i> +63% de conversión promedio con precio anclado</div>
+        </div>
+      </div>
+      <div class="eitem reveal d1">
+        <div class="enum">2</div>
+        <div class="ebody">
+          <h4>Ahorro explícito en verde — reducción de carga cognitiva</h4>
+          <p>El comprador no debería tener que calcular cuánto ahorra. Mostrar "Ahorras $70.000" en verde elimina ese esfuerzo mental y refuerza la sensación de ventaja inmediata. El color verde está asociado universalmente con beneficio y aprobación — es un sistema de señalización que el cerebro procesa antes de leer el texto.</p>
+          <div class="edata"><i data-lucide="brain"></i> Reduce carga cognitiva y acelera la decisión de compra</div>
+        </div>
+      </div>
+      <div class="eitem reveal d2">
+        <div class="enum">3</div>
+        <div class="ebody">
+          <h4>Urgencia cuantificada — aversión a la pérdida</h4>
+          <p>La urgencia genérica ("oferta limitada") ya no funciona — está sobreusada. La urgencia cuantificada — "Solo 2 unidades" — es concreta, creíble y activa la aversión a la pérdida de forma mucho más efectiva. Según la Teoría Prospectiva de Kahneman, perder algo duele el doble de lo que alegra obtenerlo. Ese dolor psicológico acelera la decisión.</p>
+          <div class="edata"><i data-lucide="clock"></i> Reduce el tiempo de decisión hasta 47% (Journal of Consumer Psychology)</div>
+        </div>
+      </div>
+      <div class="eitem reveal d3">
+        <div class="enum">4</div>
+        <div class="ebody">
+          <h4>CTA directo con número — eliminación total de fricción</h4>
+          <p>El botón de WhatsApp con el número explícito elimina por completo la fricción entre la intención y la acción. No hay que buscar el perfil, no hay que recordar un usuario, no hay que hacer ningún esfuerzo adicional. El número está ahí. La acción es inmediata. Cada click o paso adicional que se elimina del flujo incrementa la conversión en aproximadamente un 20%.</p>
+          <div class="edata"><i data-lucide="zap"></i> Cada paso eliminado del flujo = +20% en tasa de contacto</div>
+        </div>
+      </div>
+      <div class="eitem reveal d4">
+        <div class="enum">5</div>
+        <div class="ebody">
+          <h4>Variación visual por categoría — ruptura de la ceguera</h4>
+          <p>Asignar un color distinto a cada categoría de producto (cocina, dormitorio, comedor) rompe la monotonía visual que genera el banner blindness. El sistema visual humano identifica variación y le asigna relevancia. Además, facilita que el cliente identifique intuitivamente la categoría antes de leer — lo que reduce el tiempo de procesamiento y mejora la retención.</p>
+          <div class="edata"><i data-lucide="palette"></i> Variación visual reduce tasa de scroll sin interacción hasta 35%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PSICOLOGÍA -->
+<section id="psicologia" class="psico-section">
+  <div class="smeta"><div class="snum">04</div><div class="sline"></div><div class="stag">Psicología del consumidor</div></div>
+  <h2 class="stitle reveal">Las tácticas que funcionan<br>y por qué funcionan</h2>
+  <p class="ssub reveal d1">La efectividad de estas estrategias no es anecdótica. Cada una está respaldada por principios de economía conductual y psicología del consumidor con décadas de investigación aplicada.</p>
+  <div class="pgrid">
+    <div class="pcard reveal">
+      <div class="pico pi-a"><i data-lucide="anchor"></i></div>
+      <h3>Efecto de anclaje de precio</h3>
+      <div class="pref">Kahneman & Tversky, 1974 — Behavioral Economics</div>
+      <p>El primer número que ve el comprador se convierte en el ancla de referencia. Todo precio posterior se evalúa en relación a esa ancla, no de forma absoluta. Mostrar primero el precio original y luego el de oferta activa automáticamente la percepción de ganga — incluso cuando el "precio original" es el precio normal de mercado.</p>
+      <div><div class="pstat-num">+63%</div><div class="pstat-lbl">Incremento promedio en conversión con precio anclado</div></div>
+    </div>
+    <div class="pcard reveal d1">
+      <div class="pico pi-b"><i data-lucide="package"></i></div>
+      <h3>Bundling y percepción de valor</h3>
+      <div class="pref">MIT Sloan Management Review, 2011</div>
+      <p>Cuando se agrupan productos en un combo, el cerebro evalúa el paquete completo en lugar de calcular el precio unitario de cada ítem. Esto reduce la "pain of paying" — el dolor psicológico de gastar — y aumenta el ticket promedio. Los combos también simplifican la decisión al reducir el número de opciones disponibles, fenómeno conocido como "paradoja de la elección".</p>
+      <div><div class="pstat-num">+34%</div><div class="pstat-lbl">Incremento en ticket promedio con combos bien estructurados</div></div>
+    </div>
+    <div class="pcard reveal d2">
+      <div class="pico pi-c"><i data-lucide="users"></i></div>
+      <h3>Prueba social y validación colectiva</h3>
+      <div class="pref">Cialdini, Influence — 1984 / 6 principios de la persuasión</div>
+      <p>El comportamiento de otros reduce la incertidumbre de compra. Mostrar que otros ya compraron — "3 personas preguntaron por esto hoy" — activa el principio de prueba social. En ausencia de información directa sobre la calidad de un producto, el comprador usa el comportamiento colectivo como señal de confianza. Es uno de los principios de influencia más documentados.</p>
+      <div><div class="pstat-num">+61%</div><div class="pstat-lbl">Más confianza del comprador con indicadores de actividad visibles</div></div>
+    </div>
+    <div class="pcard reveal d3">
+      <div class="pico pi-d"><i data-lucide="timer"></i></div>
+      <h3>Aversión a la pérdida (Prospect Theory)</h3>
+      <div class="pref">Kahneman, Prospect Theory — Premio Nobel Economía 2002</div>
+      <p>Las pérdidas se sienten psicológicamente el doble de intensas que las ganancias equivalentes. La escasez real ("Solo 2 disponibles") convierte la compra en una oportunidad que se puede perder — y esa posibilidad de pérdida es un motivador de compra mucho más potente que el deseo de ganancia. No es manipulación: es comunicar la realidad de forma que el cerebro la procese correctamente.</p>
+      <div><div class="pstat-num">−47%</div><div class="pstat-lbl">Reducción en tiempo de decisión de compra con urgencia cuantificada</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CANALES -->
+<section id="canales" class="canal-section">
+  <div class="smeta"><div class="snum">05</div><div class="sline"></div><div class="stag">Arquitectura de canales</div></div>
+  <h2 class="stitle reveal">Priorización de canales<br>por ROI documentado</h2>
+  <p class="ssub reveal d1">No todos los canales tienen el mismo potencial para productos del hogar en Cartagena. Esta priorización está basada en comportamiento de compra local y tasas de conversión registradas para la categoría.</p>
+  <div class="cgrid">
+    <div class="crow hl reveal">
+      <div class="cid"><div class="cico c-wa"><i data-lucide="message-circle"></i></div><div><div class="cname">WhatsApp Business · Grupos locales</div><div class="csub">Conjuntos, barrios, mamás de colegios, juntas de acción comunal</div></div></div>
+      <div class="cmet"><div class="cmet-val" style="color:var(--green)">70%+</div><div class="cmet-lbl">Tasa de apertura real</div></div>
+      <div class="cmet"><div class="cmet-val" style="color:var(--accent)">Alta</div><div class="cmet-lbl">Intención de compra</div></div>
+      <div class="cmet"><div class="cbar-w"><div class="cbar"><div class="cbar-f" style="width:92%;background:var(--green)"></div></div><span style="font-size:12px;color:var(--green);font-weight:600">92</span></div><div class="cmet-lbl" style="margin-top:6px">Score de prioridad</div></div>
+      <div class="ctag on"><i data-lucide="check-circle" style="width:11px;height:11px;vertical-align:middle"></i> Activar hoy</div>
+    </div>
+    <div class="crow reveal d1">
+      <div class="cid"><div class="cico c-fb"><i data-lucide="globe"></i></div><div><div class="cname">Facebook Marketplace · Cartagena</div><div class="csub">Búsqueda activa de artículos del hogar, acceso gratuito, sin algoritmo</div></div></div>
+      <div class="cmet"><div class="cmet-val" style="color:var(--blue)">12M+</div><div class="cmet-lbl">Búsquedas/mes Colombia</div></div>
+      <div class="cmet"><div class="cmet-val" style="color:var(--accent)">Alta</div><div class="cmet-lbl">Intención de compra</div></div>
+      <div class="cmet"><div class="cbar-w"><div class="cbar"><div class="cbar-f" style="width:84%;background:var(--blue)"></div></div><span style="font-size:12px;color:var(--blue);font-weight:600">84</span></div><div class="cmet-lbl" style="margin-top:6px">Score de prioridad</div></div>
+      <div class="ctag on">Esta semana</div>
+    </div>
+    <div class="crow reveal d2">
+      <div class="cid"><div class="cico c-ig"><i data-lucide="play-circle"></i></div><div><div class="cname">Instagram Reels · Producto en uso</div><div class="csub">Video 15–30 seg, autenticidad sobre producción, sin presupuesto requerido</div></div></div>
+      <div class="cmet"><div class="cmet-val" style="color:var(--accent)">3×</div><div class="cmet-lbl">Más alcance vs. imagen</div></div>
+      <div class="cmet"><div class="cmet-val" style="color:var(--muted2)">Media</div><div class="cmet-lbl">Intención de compra</div></div>
+      <div class="cmet"><div class="cbar-w"><div class="cbar"><div class="cbar-f" style="width:60%;background:var(--accent)"></div></div><span style="font-size:12px;color:var(--accent);font-weight:600">60</span></div><div class="cmet-lbl" style="margin-top:6px">Score de prioridad</div></div>
+      <div class="ctag">Fase 2</div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN -->
+<section id="plan" class="plan-section">
+  <div class="smeta"><div class="snum">06</div><div class="sline"></div><div class="stag">Ejecución</div></div>
+  <h2 class="stitle reveal">Plan de ejecución<br>para los próximos 5 días</h2>
+  <p class="ssub reveal d1">Cada acción está secuenciada para maximizar el impacto con el mínimo de esfuerzo paralelo. La consistencia supera la perfección — una acción concreta hoy vale más que diez acciones planeadas para mañana.</p>
+  <div class="pgrid2">
+    <div class="daycard reveal">
+      <div><div class="day-lbl">Lunes</div><div class="day-L">L</div></div>
+      <div class="day-div"></div>
+      <div class="day-ico"><i data-lucide="smartphone"></i></div>
+      <div class="day-act">Activar WhatsApp Business y configurar el catálogo de productos</div>
+      <div class="day-det">Perfil completo con nombre, descripción y dirección. Catálogo con foto real, nombre, precio y descripción breve de cada producto.</div>
+      <div class="day-kpi"><i data-lucide="check"></i> Meta: catálogo activo con 7+ productos</div>
+    </div>
+    <div class="daycard reveal d1">
+      <div><div class="day-lbl">Martes</div><div class="day-L">M</div></div>
+      <div class="day-div"></div>
+      <div class="day-ico"><i data-lucide="layout-template"></i></div>
+      <div class="day-act">Rediseñar 2 flyers con precio anclado, ahorro explícito y número visible</div>
+      <div class="day-det">Los 2 productos con precio más atractivo. Precio original tachado, ahorro en verde, número de WhatsApp grande, urgencia cuantificada.</div>
+      <div class="day-kpi"><i data-lucide="check"></i> Meta: 2 flyers optimizados listos</div>
+    </div>
+    <div class="daycard reveal d2">
+      <div><div class="day-lbl">Miércoles</div><div class="day-L">Mi</div></div>
+      <div class="day-div"></div>
+      <div class="day-ico"><i data-lucide="send"></i></div>
+      <div class="day-act">Publicar en 3 grupos de WhatsApp y en Facebook Marketplace</div>
+      <div class="day-det">Grupos de barrios, conjuntos o mamás de colegios en Cartagena. Mensaje personal, no masivo. Marketplace con ubicación precisa y precio claro.</div>
+      <div class="day-kpi"><i data-lucide="check"></i> Meta: 3 grupos + 2 publicaciones Marketplace</div>
+    </div>
+    <div class="daycard reveal d3">
+      <div><div class="day-lbl">Jueves</div><div class="day-L">J</div></div>
+      <div class="day-div"></div>
+      <div class="day-ico"><i data-lucide="video"></i></div>
+      <div class="day-act">Grabar y publicar un Reel mostrando el producto en un espacio real</div>
+      <div class="day-det">15–30 segundos. El producto en uso en tu hogar, con precio en pantalla. La autenticidad genera más confianza que la producción perfecta.</div>
+      <div class="day-kpi"><i data-lucide="check"></i> Meta: 1 Reel publicado con precio visible</div>
+    </div>
+    <div class="daycard reveal d4">
+      <div><div class="day-lbl">Viernes</div><div class="day-L">V</div></div>
+      <div class="day-div"></div>
+      <div class="day-ico"><i data-lucide="bar-chart-2"></i></div>
+      <div class="day-act">Analizar contactos por canal y concentrar esfuerzo en el de mayor respuesta</div>
+      <div class="day-det">¿Cuántas consultas llegaron por cada canal? El que generó más contactos recibe doble contenido la semana siguiente. Datos, no intuición.</div>
+      <div class="day-kpi"><i data-lucide="check"></i> Meta: canal primario de conversión identificado</div>
+    </div>
+  </div>
+</section>
+
+<!-- KPIs -->
+<section id="kpis" class="kpi-section">
+  <div class="smeta"><div class="snum">07</div><div class="sline"></div><div class="stag">Métricas de seguimiento</div></div>
+  <h2 class="stitle reveal">KPIs para saber<br>si está funcionando</h2>
+  <p class="ssub reveal d1">Sin métricas, no hay estrategia — hay intuición. Estos cuatro indicadores permiten tomar decisiones basadas en evidencia, identificar qué ajustar y cuándo escalar.</p>
+  <div class="kgrid">
+    <div class="kcard reveal">
+      <div class="kico ki-a"><i data-lucide="message-square"></i></div>
+      <div class="k-lbl">Contactos por publicación</div>
+      <div class="k-target">5+</div>
+      <div class="k-desc">Personas que contactan por WhatsApp por cada publicación. Menos de 3 indica que el flyer, el mensaje o el canal necesitan ajuste antes de insistir.</div>
+      <div class="k-time"><i data-lucide="clock"></i> Medir: primeras 48h después de publicar</div>
+    </div>
+    <div class="kcard reveal d1">
+      <div class="kico ki-b"><i data-lucide="shopping-cart"></i></div>
+      <div class="k-lbl">Tasa de cierre</div>
+      <div class="k-target">25%</div>
+      <div class="k-desc">De cada 4 personas que contactan, al menos 1 debe comprar. Si la tasa es menor, el problema está en el proceso de atención y seguimiento posterior al contacto.</div>
+      <div class="k-time"><i data-lucide="clock"></i> Medir: semanal, con registro manual simple</div>
+    </div>
+    <div class="kcard reveal d2">
+      <div class="kico ki-c"><i data-lucide="repeat"></i></div>
+      <div class="k-lbl">Canal primario de conversión</div>
+      <div class="k-target">×1</div>
+      <div class="k-desc">Identificar un único canal que concentre la mayoría de los contactos reales de compra. Dispersar esfuerzo sin datos en múltiples canales simultáneos reduce el rendimiento general.</div>
+      <div class="k-time"><i data-lucide="clock"></i> Identificar en la primera semana de ejecución</div>
+    </div>
+    <div class="kcard reveal d3">
+      <div class="kico ki-d"><i data-lucide="trending-up"></i></div>
+      <div class="k-lbl">Ticket promedio</div>
+      <div class="k-target">+20%</div>
+      <div class="k-desc">Incremento esperado por venta al implementar combos y precios anclados. Si no sube, los paquetes no están siendo presentados o comunicados correctamente al comprador.</div>
+      <div class="k-time"><i data-lucide="clock"></i> Medir a 2 semanas de implementar combos</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-brand">Estrategia Comercial · Cartagena 2025</div>
+  <div class="foot-note">Basado en economía conductual, comportamiento del consumidor digital y datos de mercado Colombia</div>
+  <div class="foot-links">
+    <a href="#diagnostico">Diagnóstico</a>
+    <a href="#colombia">Mercado</a>
+    <a href="#canales">Canales</a>
+    <a href="#plan">Plan semanal</a>
+    <a href="#kpis">KPIs</a>
+  </div>
+</footer>
+
+<script>
+lucide.createIcons();
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }});
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.cbar-f').forEach(b => {
+        const w = b.style.width; b.style.width='0';
+        setTimeout(()=>{ b.style.width=w; }, 120);
+      });
+      barObs.unobserve(e.target);
+    }
+  });
+},{ threshold: 0.2 });
+document.querySelectorAll('.crow').forEach(el => barObs.observe(el));
+</script>
+</body>
+</html>
